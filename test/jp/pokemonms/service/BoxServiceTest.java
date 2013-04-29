@@ -1,7 +1,8 @@
 package jp.pokemonms.service;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
@@ -10,15 +11,16 @@ import jp.pokemonms.meta.MemberMeta;
 import jp.pokemonms.meta.json.storage.box.RookieBoxMeta;
 import jp.pokemonms.model.Member;
 import jp.pokemonms.model.json.storage.box.RookieBox;
-import jp.pokemonms.tester.AppEngineTestCase4HRD;
 import jp.pokemonms.tester.LoginHelper;
 
 import org.apache.commons.lang3.tuple.Pair;
-import org.junit.Before;
 import org.junit.Test;
 import org.slim3.datastore.Datastore;
+import org.slim3.tester.AppEngineTestCase;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
+import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 
 /**
  * ボックス用サービステスト
@@ -26,7 +28,7 @@ import com.google.appengine.api.datastore.Key;
  * @author Sinmetal
  * 
  */
-public class BoxServiceTest extends AppEngineTestCase4HRD {
+public class BoxServiceTest extends AppEngineTestCase {
 
     /** loginHelper */
     private LoginHelper loginHelper = new LoginHelper();
@@ -34,13 +36,24 @@ public class BoxServiceTest extends AppEngineTestCase4HRD {
     /** BoxService */
     private BoxService service = new BoxService();
 
-    /**
-     * テスト前設定
-     */
-    @Before
+    private LocalServiceTestHelper helper;
+
+    @Override
     public void setUp() throws Exception {
+        helper =
+            new LocalServiceTestHelper(
+                new LocalDatastoreServiceTestConfig()
+                    .setDefaultHighRepJobPolicyUnappliedJobPercentage(100));
+
+        helper.setUp();
         super.setUp();
         loginHelper.init();
+    }
+
+    @Override
+    public void tearDown() throws Exception {
+        super.tearDown();
+        helper.tearDown();
     }
 
     /**
