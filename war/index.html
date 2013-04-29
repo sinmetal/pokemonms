@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PokemonMS α</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><!-- Le styles -->
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/src/files/top/stylesheet.css">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/icon/apple/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/apple/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/apple/apple-touch-icon-114x114.png"></head>
+  <body>
+    <div id="menu"></div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <script src="//widgets.twimg.com/j/2/widget.js"></script>
+          <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'search',
+                search: '#pokemonBW',
+                interval: 30000,
+                title: 'PokemonBW',
+                subject: '',
+                width: 220,
+                height: 600,
+                theme: {
+                    shell: {
+                        background: '#f5f5f5',
+                        color: '#444444'
+                    },
+                    tweets: {
+                        background: '#ffffff',
+                        color: '#444444',
+                        links: '#1985b5'
+                    }
+                },
+                features: {
+                    scrollbar: true,
+                    loop: true,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    toptweets: true,
+                    behavior: 'default'
+                }
+            }).render().start();
+          </script>
+        </div>
+        <div class="span9">
+          <div id="error-message"></div>
+          <!-- Main hero unit for a primary marketing message or call to action -->
+          <div class="hero-unit">
+            <h1>PokemonMS</h1>
+            <p>PokemonMSは、ポケモントレーナーのための非公式ファンサイトです。</p>
+            <p>
+              <a class="btn btn-primary btn-large">Learn more &raquo;</a>
+            </p>
+          </div>
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="span4mini">
+              <h2>Home</h2>
+              <p>あなたのためのページです。ポケモンを登録して、管理することができます。このURLを友人に教えれば、あなたのページを見ることができます。</p>
+              <p>
+                <a class="btn" href="#">View details &raquo;</a>
+              </p>
+            </div>
+            <div class="span4mini">
+              <h2>LocalTradeStation</h2>
+              <p>ポケモンを交換するための場です。ユーザ同士で、孵化余りのポケモンなどの交換をするための交渉をすることができます。</p>
+              <p>
+                <a class="btn btn-info" href="#">Coming Soon &raquo;</a>
+              </p>
+            </div>
+            <div class="span4mini">
+              <h2>Tournament</h2>
+              <p>ポケモン大会を管理する場です。ユーザ主催の大会を登録したり、登録されている大会に参加申請を行うことができます。</p>
+              <p>
+                <a class="btn btn-info" href="#">Coming Soon &raquo;</a>
+              </p>
+            </div>
+            <div class="span4mini">
+              <h2>Battle</h2>
+              <p>フレンドバトルを楽しむための場です。対戦する相手を募集したり、募集している相手に挑戦することができます。</p>
+              <p>
+                <a class="btn btn-info" href="#">Coming Soon &raquo;</a>
+              </p>
+            </div>
+          </div>
+          <hr></div>
+      </div><hr>
+      <div id="footer"></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="/lib/jquery/jquery-1.7.2.min.js"><\/script>')
+    </script>
+    <script src="/lib/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <script src="/src/deps.js"></script>
+    <script>
+      goog.require('top.App');
+    </script>
+    <!--
+    <script src="/src/files/top/scripts.js">
+    </script>
+    -->
+  </body>
+</html>

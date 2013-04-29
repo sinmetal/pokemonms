@@ -1,0 +1,201 @@
+{namespace templates.storage} 
+/** 
+* storage pokemon
+* @param key The data key.
+* @param version The data version.
+* @param id The Pokemon of the id.
+* @param pokemonName The Pokemon of the name.
+* @param nickname The Pokemon of the nickname.
+* @param personName The Pokemon of the person.
+* @param genderName The Pokemon of the gender.
+* @param abilityName The Pokemon of the ability.
+* @param individualH The Pokemon of the individualH.
+* @param individualA The Pokemon of the individualA.
+* @param individualB The Pokemon of the individualB.
+* @param individualC The Pokemon of the individualC.
+* @param individualD The Pokemon of the individualD.
+* @param individualS The Pokemon of the individualS.
+* @param effortH The Pokemon of the effortH.
+* @param effortA The Pokemon of the effortA.
+* @param effortB The Pokemon of the effortB.
+* @param effortC The Pokemon of the effortC.
+* @param effortD The Pokemon of the effortD.
+* @param effortS The Pokemon of the effortS.
+* @param lv50H The Pokemon of the Lv50H.
+* @param lv50A The Pokemon of the Lv50A.
+* @param lv50B The Pokemon of the Lv50B.
+* @param lv50C The Pokemon of the Lv50C.
+* @param lv50D The Pokemon of the Lv50D.
+* @param lv50S The Pokemon of the Lv50S.
+* @param trick1stName The Pokemon of the Trick1st.
+* @param trick2ndName The Pokemon of the Trick2nd.
+* @param trick3rdName The Pokemon of the Trick3rd.
+* @param trick4thName The Pokemon of the Trick4th.
+* @param awakenPowerElementName The Pokemon of the awakenPowerElement.
+* @param awakenPowerEdge The Pokemon of the awakenPowerEdge.
+* @param remark remark.
+*/
+{template .pokemon}
+  <div class="storage-list-back">
+  <div class="storage-list">
+    <div class="storage-column-id">
+      <div class="storage-id">{$id}</div>
+      <div class="float-left"      ><a href="edit?key={$key}&version={$version}"><img src="/img/icon/edit.png" alt="編集" title="編集"/></a></div>
+      <div class="margin-left-10"><a href="delete?key={$key}&version={$version}" onclick="return confirm('削除してもよろしいですか？')"><img src="/img/icon/remove.png" alt="削除" title="削除"/></a></div>
+    </div>
+    <div class="storage-column-name">
+      <div class="pokemon-name float-left">{$pokemonName}</div>
+      <div class="gender-name"            >{$genderName}</div>
+      <div class="nickname"               >{$nickname}</div>
+      <div class="ability-name"           >{$abilityName}</div>
+      <div class="person-name"            >{$personName}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualH}</div>
+      <div>{$effortH}</div>
+      <div>{$lv50H}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualA}</div>
+      <div>{$effortA}</div>
+      <div>{$lv50A}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualB}</div>
+      <div>{$effortB}</div>
+      <div>{$lv50B}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualC}</div>
+      <div>{$effortC}</div>
+      <div>{$lv50C}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualD}</div>
+      <div>{$effortD}</div>
+      <div>{$lv50D}</div>
+    </div>
+    <div class="storage-column-status">
+      <div>{$individualS}</div>
+      <div>{$effortS}</div>
+      <div>{$lv50S}</div>
+    </div>
+    <div class="storage-column-trick">
+        <div class="span1-5 float-left"     >{$trick1stName}</div>
+        <div class="span1-5"      >{$trick2ndName}</div>
+        <div class="span1-5 clear-left"                  >{$trick3rdName}</div>
+        <div class="span1-5 float-left"                  >{$trick4thName}</div>      
+        <div class="span0-5 float-left">{$awakenPowerElementName}</div>
+        <div class="span0-5">{$awakenPowerEdge}</div>
+    </div>
+    <div class="storage-column-remark">
+      <div>{$remark}</div>
+    </div>
+  </div>
+  </div>
+{/template}
+
+/**
+* storage body.
+* @param pokemonList
+*/
+{template .pokemonList}
+  {foreach $pokemon in $pokemonList}
+    {call .pokemon}
+      {param key: $pokemon.key /}
+      {param version: $pokemon.version /}
+      {param id: $pokemon.id /}
+      {param pokemonName: $pokemon.pokemonName /}
+      {param nickname: $pokemon.nickname /}
+      {param personName: $pokemon.personName /}
+      {param genderName: $pokemon.genderName /}
+      {param abilityName: $pokemon.abilityName /}
+      {param individualH: $pokemon.individualH /}
+      {param individualA: $pokemon.individualA /}
+      {param individualB: $pokemon.individualB /}
+      {param individualC: $pokemon.individualC /}
+      {param individualD: $pokemon.individualD /}
+      {param individualS: $pokemon.individualS /}
+      {param effortH: $pokemon.effortH /}
+      {param effortA: $pokemon.effortA /}
+      {param effortB: $pokemon.effortB /}
+      {param effortC: $pokemon.effortC /}
+      {param effortD: $pokemon.effortD /}
+      {param effortS: $pokemon.effortS /}
+      {param lv50H: $pokemon.lv50H /}
+      {param lv50A: $pokemon.lv50A /}
+      {param lv50B: $pokemon.lv50B /}
+      {param lv50C: $pokemon.lv50C /}
+      {param lv50D: $pokemon.lv50D /}
+      {param lv50S: $pokemon.lv50S /}
+      {param trick1stName: $pokemon.trick1stName /}
+      {param trick2ndName: $pokemon.trick2ndName /}
+      {param trick3rdName: $pokemon.trick3rdName /}
+      {param trick4thName: $pokemon.trick4thName /}
+      {param awakenPowerElementName: $pokemon.awakenPowerElementName /}
+      {param awakenPowerEdge: $pokemon.awakenPowerEdge /}
+      {param remark: $pokemon.remark /}
+    {/call}
+    {ifempty}
+      No pokemon list.
+  {/foreach}
+{/template}
+
+/**
+* storage side menu profile.
+* @param twitterScreenName The ScreenName of the Twitter.
+* @param twitterName The Name of the Twitter.
+* @param twitterProfileImageUrl The Url of the Twitter Profile Image.
+*/
+{template .profile}
+<div class="row">
+  <div class="span">
+    <a href="http://twitter.com/{$twitterScreenName}"><img src="{$twitterProfileImageUrl}"></img>
+    </a>
+  </div>
+  <div class="span1">
+    <div class="row">
+      <div class="span1">
+        <h5><a href="http://twitter.com/{$twitterScreenName}">{$twitterName}</a></h5>
+      </div>
+      <div class="span1">
+        <h5><a href="http://twitter.com/{$twitterScreenName}">{$twitterScreenName}</a></h5>
+      </div>
+    </div>
+  </div>
+</div>
+{/template}
+/**
+* storage side menu box list.
+*/
+{template .boxList}
+<ul class="nav nav-list">
+  <li class="nav-header">BattleBox</li>
+  <li class="active">
+    <a href="#">バトル1</a>
+  </li>
+  <li>
+    <a href="#">バトル2</a>
+  </li>
+  <li class="nav-header">KidsBox</li>
+  <li>
+    <a href="#">キッズ1</a>
+  </li>
+  <li>
+    <a href="#">キッズ2</a>
+  </li>
+  <li class="nav-header">TradeBox</li>
+  <li>
+    <a href="#">里親募集中1</a>
+  </li>
+  <li>
+    <a href="#">里親募集中2</a>
+  </li>
+  <li>
+    <a href="#">交換募集中1</a>
+  </li>
+  <li>
+    <a href="#">交換募集中2</a>
+  </li>
+</ul>
+{/template}

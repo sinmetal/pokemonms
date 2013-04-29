@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PokemonMS α</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><!-- Le styles -->
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/src/files/storage/stylesheet.css">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/icon/apple/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/apple/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/apple/apple-touch-icon-114x114.png"></head>
+  <body>
+    <div id="menu"></div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div id="sidemenu" class="span3">
+          <div id="profile"></div>
+        </div>
+        <div class="span9" id="boxes-page">
+          <div id="error-message"></div>
+          <p>
+            <a class="btn" id="entry-btn">新規登録</a>
+          </p>
+          <div id="box-body"></div>
+        </div>
+        <div class="span9 hide" id="entry-page">
+          <p>
+            <a class="btn" id="back2boxes-btn">Box一覧へ戻る</a>
+            <a class="btn btn-primary" id="entry-box-btn">Boxを登録！</a>
+          </p>
+          <form class="form-horizontal" method="post" id="entry-form">
+            <fieldset>
+              <legend>Box情報</legend>
+              <div class="control-group" id="boxNameContainer">
+                <label class="control-label">Box名</label>
+                <div class="controls">
+                  <div class="input-prepend input-append">
+                    <input class="span2" id="name" name="name" type="text" autocomplete="off" placeholder="孵化余り" />
+                  </div>
+                </div>
+              </div>
+              <div class="control-group" id="boxTypeContainer">
+                <label class="control-label">Boxタイプ</label>
+                <div class="controls">
+                  <select>
+                    <option value="1">育成前ポケモン</option>
+                    <option value="2">バトルボックス</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">公開範囲</label>
+                <div class="controls">
+                  <select>
+                    <option value="1">自分のみ</option>
+                    <option value="2">全体公開</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div><hr>
+      <div id="footer"></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="/lib/jquery/jquery-1.7.2.min.js"><\/script>')
+    </script>
+    <script src="/lib/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+     
+    <script src="/src/deps.js"></script>
+    <script>
+      goog.require('storage.box.App');
+    </script>
+	<!--
+    <script src="/src/files/storage/box/scripts.js"></script>
+    -->
+  </body>
+</html>

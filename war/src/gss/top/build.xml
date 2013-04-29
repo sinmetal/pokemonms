@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project basedir="." default="gss_to_css">
+	<target name="book">
+		<property name="target" value="../index.html" />
+		<antcall target="_create_css" />
+	</target>
+
+	<target name="gss_to_css">
+		<java jar="../../../../lib/closure-stylesheets.jar" fork="true">
+			<arg value="--output-file" />
+			<arg value="../../files/top/stylesheet.css" />
+			<arg value="../common/global.gss" />
+		</java>
+	</target>
+</project>

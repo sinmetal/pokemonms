@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project basedir="." default="soy_to_javascript">
+    <target name="book">
+        <property name="target" value="../index.html"/>
+        <antcall target="_create_soy"/>
+    </target>
+    
+    <target name="soy_to_javascript">
+        <java jar="../../../../lib/SoyToJsSrcCompiler.jar" fork="true">
+            <arg value="--outputPathFormat"/>
+            <arg value="../../scripts/common/templates.js"/>
+            <arg value="--shouldProvideRequireSoyNamespaces"/>
+            <arg value="menu.soy"/>
+            <arg value="footer.soy"/>
+            <arg value="alerts.soy"/>
+        </java>
+    </target>
+</project>

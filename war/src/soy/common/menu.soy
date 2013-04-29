@@ -1,0 +1,74 @@
+{namespace templates.menu}
+/**
+* topmenu.
+*/
+{template .topMenu}
+<div class="topbar" data-dropdown="dropdown">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="/">PokemonMS α</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li>
+                            <a href="/storage/">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#localTradeStation">LTS</a>
+                        </li>
+                        <li>
+                            <a href="#tournament">Tournament</a>
+                        </li>
+                        <li>
+                            <a href="#battle">Battle</a>
+                        </li>
+                    </ul>
+                    <ul id="login-menu" class="nav pull-right">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/template}
+/**
+* topmenu myInfo.
+* @param twitterScreenName The ScreenName of the Twitter.
+*/
+{template .myInfo}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$twitterScreenName}<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">Secondary link</a>
+        </li>
+        <li>
+            <a href="#">Something else here</a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+            <a href="/authentication/logout">ログアウト</a>
+        </li>
+    </ul>
+</li>
+{/template}
+/**
+* topmenu login link.
+*/
+{template .loginLink}
+<li>
+    <a href="/authentication/">ログイン</a>
+</li>
+{/template}
+/**
+* topmenu login link loading.
+*/
+{template .loginLinkLoading}
+<li>
+    <a href="#">Loading...</a>
+</li>
+{/template}

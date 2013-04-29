@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>AllTest</title>
+        <link rel="stylesheet" href="/closure-library/closure/goog/css/multitestrunner.css">
+    </head>
+    <body>
+        <!--ここにテストランナーを表示-->
+        <div id="runner">
+        </div>
+        <script type="text/javascript" src="/closure-library/closure/goog/base.js">
+        </script>
+        <script type="text/javascript">
+            goog.require("goog.testing.MultiTestRunner");
+            goog.require("goog.dom");
+        </script>
+        <script type="text/javascript">
+            var testRunner = new goog.testing.MultiTestRunner();
+            
+            var testPaths = ["/closurelibrary/ajaxsample/test.html",
+							 "/closurelibrary/xhrio-sample/test.html"];
+            testRunner.addTests(testPaths);
+            
+            testRunner.render(goog.dom.getElement("runner"));
+        </script>
+    </body>
+</html>

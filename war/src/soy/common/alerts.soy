@@ -1,0 +1,18 @@
+{namespace templates.alerts}
+/**
+* error alert.
+* @param errorMessage The Server response message.
+*/
+{template .error}
+<div class="alert alert-error">
+    <button class="close" data-dismiss="alert">
+        ×
+    </button>
+    <strong>Error!</strong>
+    {if not $errorMessage}
+    時間をおいて再度試してみてください。
+    {else}
+    {$errorMessage}時間をおいて再度試してみてください。
+    {/if}
+</div>
+{/template}

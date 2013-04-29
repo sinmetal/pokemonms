@@ -1,0 +1,69 @@
+body {
+  padding-top: 60px;
+}
+
+.span0-5 {
+  width: 40px;
+}
+
+.span1-5 {
+  width: 100px;
+}
+
+.container-fluid {
+  max-width: 980px;
+}
+
+.hero-unit {
+  background-image: url(/img/item/titleImage.png);
+  background-color: white;
+}
+
+.ex-sidebar {
+  float: left;
+  width: 200px;
+}
+
+.ex-content {
+  margin-left: 220px;
+}
+
+.float-left {
+  float : left;
+}
+
+.clear-left {
+  clear : left;
+}
+
+.margin-left-10 {
+  margin-left : 10px;
+}
+
+.row-fluid .span4mini {
+  width: 29%;
+}
+
+.icon-loading16-black {
+    background-image: url("/img/icon/loading16-black.gif");
+    width: 32px;
+    height: 32px;
+}
+
+.icon-loading16-white {
+    background-image: url("/img/icon/loading16-white.gif");
+    width: 32px;
+    height: 32px;
+}
+
+.icon-loading-white {
+    background-image: url("/img/icon/loading-white.gif");
+    width: 32px;
+    height: 32px;
+}
+
+.icon-loading-black {
+    background-image: url("/img/icon/loading-black.gif");
+    width: 32px;
+    height: 32px;
+}

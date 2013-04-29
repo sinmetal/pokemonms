@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PokemonMS α</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><!-- Le styles -->
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/src/files/storage/stylesheet.css">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/icon/apple/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/apple/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/apple/apple-touch-icon-114x114.png"></head>
+  <body>
+    <div id="menu"></div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div id="sidemenu" class="span3">
+          <div id="profile"></div>
+          <p>
+            <a class="btn" href="/storage/box">Box編集</a>
+          </p>
+          <div class="well sidebar-nav"></div>
+        </div>
+        <div class="span9" id="storages-page">
+          <div id="error-message"></div>
+          <p>
+            <a class="btn" id="entry-btn">新規登録</a>
+          </p>
+          <div id="storage-body"></div>
+        </div>
+        <div class="span9 hide" id="entry-page1">
+          <p>
+            <a class="btn" id="back2storages-btn">ストレージ一覧へ戻る</a>
+            <a class="btn btn-primary" id="entry-pokemoninfo-btn">ポケモン情報入力へ進む</a>
+          </p>
+          <form class="form-horizontal" method="post" id="entry-form1">
+            <fieldset>
+              <legend>個体値チェック</legend>
+              <div class="control-group" id="pokemonNameContainer">
+                <label class="control-label">ポケモン</label>
+                <div class="controls">
+                  <div class="input-prepend input-append">
+                    <input class="span2" id="pokemonName" name="pokemonName" type="text" autocomplete="off" placeholder="フシギダネ" />
+                    <div class="suggest" id="suggestPokemonName" style="display: none;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group" id="personNameContainer">
+                <label class="control-label">せいかく</label>
+                <div class="controls">
+                  <input class="span2" id="personName" name="personName" type="text" autocomplete="off" placeholder="ひかえめ" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Lv</label>
+                <div class="controls">
+                  <input class="span1" id="nowLv" name="nowLv" type="text" autocomplete="off" placeholder="50" />
+                </div>
+              </div>
+              <div id="pokemonStatusContainer"></div>
+              <div class="control-group">
+                <label class="control-label">能力値</label>
+                <div class="controls">
+                  <input class="span1" id="lv50H" name="lv50H" type="text" autocomplete="off" placeholder="H" />&nbsp;
+                  <input class="span1" id="lv50A" name="lv50A" type="text" autocomplete="off" placeholder="A" />&nbsp;
+                  <input class="span1" id="lv50B" name="lv50B" type="text" autocomplete="off" placeholder="B" />&nbsp;
+                  <input class="span1" id="lv50C" name="lv50C" type="text" autocomplete="off" placeholder="C" />&nbsp;
+                  <input class="span1" id="lv50D" name="lv50D" type="text" autocomplete="off" placeholder="D" />&nbsp;
+                  <input class="span1" id="lv50S" name="lv50S" type="text" autocomplete="off" placeholder="S" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">努力値</label>
+                <div class="controls">
+                  <input class="span1" id="effortH" name="effortH" type="text" autocomplete="off" placeholder="H" />&nbsp;
+                  <input class="span1" id="effortA" name="effortA" type="text" autocomplete="off" placeholder="A" />&nbsp;
+                  <input class="span1" id="effortB" name="effortB" type="text" autocomplete="off" placeholder="B" />&nbsp;
+                  <input class="span1" id="effortC" name="effortC" type="text" autocomplete="off" placeholder="C" />&nbsp;
+                  <input class="span1" id="effortD" name="effortD" type="text" autocomplete="off" placeholder="D" />&nbsp;
+                  <input class="span1" id="effortS" name="effortS" type="text" autocomplete="off" placeholder="S" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">個体値</label>
+                <div class="controls">
+                  <input class="span1" id="individualH" name="individualH" type="text" autocomplete="off" placeholder="H" />&nbsp;
+                  <input class="span1" id="individualA" name="individualA" type="text" autocomplete="off" placeholder="A" />&nbsp;
+                  <input class="span1" id="individualB" name="individualB" type="text" autocomplete="off" placeholder="B" />&nbsp;
+                  <input class="span1" id="individualC" name="individualC" type="text" autocomplete="off" placeholder="C" />&nbsp;
+                  <input class="span1" id="individualD" name="individualD" type="text" autocomplete="off" placeholder="D" />&nbsp;
+                  <input class="span1" id="individualS" name="individualS" type="text" autocomplete="off" placeholder="S" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">めざめるパワー</label>
+                <div class="controls">
+                  <input type="text" id="awakenPowerType" name="awakenPowerElementName" class="span2" autocomplete="off" placeholder="タイプ" />
+                  <div id="suggestElement" class="suggest" style="display: none;"></div>
+                  <input type="text" name="awakenPowerEdge" class="span2" autocomplete="off" placeholder="威力" />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-primary" id="calculate-btn">個体値計算</button>
+                &nbsp;<button type="button" class="btn">ステータス初期化</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="span9 hide" id="entry-page2">
+          <p>
+            <a class="btn" id="back2entry1-btn">個体値チェックに戻る</a>
+            <a class="btn btn-primary" id="entry-storage-btn">ポケモンを登録！</a>
+          </p>
+          <form class="form-horizontal" method="post" id="entry-form2">
+            <fieldset>
+              <legend>ポケモン情報</legend>
+              <div class="control-group">
+                <label class="control-label">ニックネーム</label>
+                <div class="controls">
+                  <input type="text" class="span2" id="nickname" name="nickname" autocomplete="off" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">せいべつ</label>
+                <div class="controls">
+                  <select class="span2" name="genderId">
+                    <option value="1">♂</option>
+                    <option value="2">♀</option>
+                    <option value="3">不明</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">とくせい</label>
+                <div class="controls">
+                  <input class="span2" id="abilityName" name="abilityName" type="text" autocomplete="off" />
+                  <div class="suggest" id="suggestAbility" style="display: none;"></div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">わざ</label>
+                <div class="controls">
+                  <input class="span1-5" id="trick1stName" name="trick1stName" type="text" autocomplete="off" />
+                  <input class="span1-5" id="trick2ndName" name="trick2ndName" type="text" autocomplete="off" />
+                  <input class="span1-5" id="trick3rdName" name="trick3rdName" type="text" autocomplete="off" />
+                  <input class="span1-5" id="trick4thName" name="trick4thName" type="text" autocomplete="off" />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">備考</label>
+                <div class="controls">
+                  <input class="span3" name="remark" type="text" autocomplete="off" />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div><hr>
+      <div id="footer"></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="/lib/jquery/jquery-1.7.2.min.js"><\/script>')
+    </script>
+    <script src="/lib/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <!-- 
+    <script src="/src/deps.js"></script>
+    <script>
+      goog.require('storage.App');
+    </script>
+	-->
+    <script src="/src/files/storage/scripts.js"></script>
+    
+  </body>
+</html>

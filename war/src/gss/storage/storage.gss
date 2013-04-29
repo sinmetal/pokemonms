@@ -1,0 +1,52 @@
+.storage-list-back {
+  clear : left;
+  margin-top : 10px;
+  border: 1px solid #DDD;
+  border-spancing : 0;
+  padding : 5px;
+  
+  background-color : whiteSmoke;
+  border-radius : 4px;
+  -webkit-box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  
+  background-image : url('/img/item/i_sandopan.gif');
+  background-repeat : no-repeat;
+  background-position : right bottom;
+  /*background-attachment : fixed;*/
+  filter : alpha(opacity=90);
+  opacity : 0.9;
+}
+
+.storage-list {
+  /*background : #ffffff;*/
+}
+
+.storage-column-id {
+  float : left;
+  width : 50px;
+}
+
+.storage-column-name {
+  float : left;
+  width : 80px;
+}
+
+.storage-column-status {
+  float : left;
+  width : 48px;
+  text-align : right;
+}
+
+.storage-column-trick {
+  margin-left : 10px;
+  float : left;
+  width : 280px;
+}
+
+.storage-column-remark {
+  clear : left;
+  width : 800px;
+  margin-left : 50px;
+}
